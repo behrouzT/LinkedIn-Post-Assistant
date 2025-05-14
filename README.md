@@ -88,7 +88,7 @@ Coming soon!
 ### Build and Test Locally
 1. Clone this repository
 2. Open the project in your code editor
-3. Load the `src` folder as an unpacked extension in Chrome
+3. Load the `LinkedIn Post Assistant` folder as an unpacked extension in Chrome
 
 ### Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
