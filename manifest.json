@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Post Assistant",
+  "version": "1.0.6",
+  "description": "Assists with LinkedIn posts using OpenAI - summarize posts and ask questions",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["*://*.linkedin.com/*", "https://api.openai.com/*"],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": [
+        "js/utils/helpers.js",
+        "js/modules/storage.js", 
+        "js/modules/api.js", 
+        "js/modules/posts.js",
+        "js/content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["js/modules/*", "js/utils/*"],
+      "matches": ["*://*.linkedin.com/*"]
+    }
+  ]
+} 

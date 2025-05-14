@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Assistant</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="app-container">
+    <div class="app-header">
+      <h1>LinkedIn Assistant</h1>
+    </div>
+    
+    <!-- Tab Navigation -->
+    <div class="tab">
+      <button class="tablinks" data-tab="summarize"><span class="material-icons">summarize</span> Summarize</button>
+      <button class="tablinks" data-tab="qa"><span class="material-icons">question_answer</span> Q&A</button>
+      <button class="tablinks" data-tab="settings"><span class="material-icons">settings</span> Settings</button>
+      <button class="tablinks" data-tab="about"><span class="material-icons">info</span> About</button>
+    </div>
+    
+    <!-- Summarize Tab -->
+    <div id="summarize" class="tabcontent">
+      <div class="status">
+        <div class="toggle">
+          <label class="switch">
+            <input type="checkbox" id="toggle">
+            <span class="slider"></span>
+          </label>
+          <span id="status">Enabled</span>
+        </div>
+        <p>Automatically summarize LinkedIn posts as you browse.</p>
+      </div>
+      
+      <button id="summarizeNow" class="action-button"><span class="material-icons">refresh</span> Re-Summarize All Posts Now</button>
+    </div>
+    
+    <!-- Q&A Tab -->
+    <div id="qa" class="tabcontent">
+      <div id="selectedPost" class="selected-post">
+        <div class="post-header">
+          <span class="material-icons post-icon">article</span>
+          <span class="post-title">Selected Post</span>
+        </div>
+        <div class="post-content">
+          No post selected. Click on a post on the LinkedIn page to select it.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="postSelector"><span class="material-icons input-icon">list</span> Or select a post:</label>
+        <select id="postSelector" class="enhanced-select">
+          <option value="">-- Select a post --</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="question"><span class="material-icons input-icon">help</span> Ask a question about this post:</label>
+        <div class="input-container">
+          <input type="text" id="question" placeholder="Type your question here" class="enhanced-input">
+          <button id="askQuestion" class="inline-button"><span class="material-icons">send</span></button>
+        </div>
+      </div>
+      
+      <div id="qaContainer" class="qa-container">
+        <!-- Q&A items will be added here dynamically -->
+      </div>
+    </div>
+    
+    <!-- Settings Tab -->
+    <div id="settings" class="tabcontent">
+      <div class="api-key-section">
+        <div class="section-header">
+          <span class="material-icons">vpn_key</span>
+          <h3>API Configuration</h3>
+        </div>
+        <label for="apiKey">OpenAI API Key:</label>
+        <div class="input-container">
+          <input type="password" id="apiKey" placeholder="Enter your API key" class="enhanced-input">
+          <button id="saveKey" class="inline-button"><span class="material-icons">save</span></button>
+        </div>
+        <p id="apiKeyStatus" class="danger">API key not set</p>
+      </div>
+      
+      <div class="form-group">
+        <label for="model"><span class="material-icons input-icon">psychology</span> Model:</label>
+        <select id="model" class="enhanced-select">
+          <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Faster)</option>
+          <option value="gpt-4">GPT-4 (More Accurate)</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="summaryLength"><span class="material-icons input-icon">text_fields</span> Summary Length:</label>
+        <select id="summaryLength" class="enhanced-select">
+          <option value="short">Short</option>
+          <option value="medium">Medium</option>
+          <option value="long">Long</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <div class="toggle-container">
+          <div class="toggle">
+            <label class="switch">
+              <input type="checkbox" id="translate">
+              <span class="slider"></span>
+            </label>
+            <span><span class="material-icons">translate</span> Translate to Persian</span>
+          </div>
+          <p>Automatically translates all posts and answers to Persian language.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- About Tab -->
+    <div id="about" class="tabcontent">
+      <div class="about-header">
+        <div class="logo-container">
+          <img src="assets/icons/icon128.png" alt="Logo" class="about-logo">
+        </div>
+        <div class="about-title">
+          <h2>LinkedIn Assistant</h2>
+          <span class="version-badge">v1.0.1</span>
+        </div>
+      </div>
+      
+      <div class="author-card">
+        <span class="author-label">Created by</span>
+        <a href="https://www.linkedin.com/in/behrouztorabi91/" target="_blank" class="author-link">Behrouz Torabi</a>
+      </div>
+      
+      <div class="about-description">
+        <p>This extension uses OpenAI's API to enhance your LinkedIn experience by automatically summarizing posts, extracting key points, answering questions, and providing translation capabilities.</p>
+      </div>
+      
+      <div class="features-section">
+        <h3>Features</h3>
+        <ul class="features-list">
+          <li>Automatic post summarization</li>
+          <li>Ask questions about any post</li>
+          <li>Key Points extraction</li>
+          <li>Multilingual support with RTL detection</li>
+          <li>Translation between English and Persian</li>
+        </ul>
+      </div>
+      
+      <div class="social-links">
+        <a href="https://github.com/behrouzT" target="_blank" class="social-button github">
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/behrouztorabi91/" target="_blank" class="social-button linkedin">
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/popup.js"></script>
+</body>
+</html> 
