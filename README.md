@@ -40,13 +40,18 @@ LinkedIn Post Assistant/
 
 ## Installation
 
-### From Source
+### Download the Extension from Release
 
-1. Download or clone this repository to your local machine
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable "Developer mode" in the top right corner
-4. Click "Load unpacked" and select the `LinkedIn Post Assistant` folder from this repository
-5. The extension is now installed and will automatically work when you visit LinkedIn
+1. Visit the releases page of the repository.
+2. Find the latest version (e.g., `LinkedIn Post Assistant - v1`) and download the zip file (e.g., `LinkedIn-Post-Assistant-v1.zip`).
+2. Extract the ZIP file to a folder on your system.
+
+### Install the Extension in Chrome
+
+1. Open Chrome and navigate to `chrome://extensions/`.
+2. Enable "`Developer mode`" in the top right corner.
+3. Click "`Load unpacked`" and select the extracted LinkedIn Post Assistant folder.
+4. The extension is now installed and will automatically work when you visit LinkedIn.
 
 ### From Chrome Web Store
 
