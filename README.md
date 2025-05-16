@@ -10,7 +10,7 @@ A Chrome extension that enhances your LinkedIn experience using OpenAI to summar
 - Works on your feed, profile pages, and company pages
 - Toggle summarization on/off with a simple switch
 - Force re-summarization of all visible posts with a button click
-- Choose between GPT-3.5 and GPT-4 models
+- Choose between GPT-3.5 and 4o models
 - Adjust summary length to your preference
 - Automatic language detection with proper RTL/LTR text alignment
 - Translation between English and Persian
