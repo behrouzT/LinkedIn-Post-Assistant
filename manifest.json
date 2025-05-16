@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "LinkedIn Post Assistant",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Assists with LinkedIn posts using OpenAI - summarize posts and ask questions",
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": ["*://*.linkedin.com/*", "https://api.openai.com/*"],
